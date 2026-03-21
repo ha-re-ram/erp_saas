@@ -1,0 +1,18 @@
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+/tmp/
+/cache/
+*.log
+
+# Databases (if you have local db dumps, you might want to keep them or not)
+# database.sql is currently in your repo root. If you want it on GitHub, I won't ignore it.
