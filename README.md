@@ -2,6 +2,21 @@
 
 This repository contains a full-stack web application designed for multi-tenant SaaS. It allows business owners to manage their stores (ERP) and sell products online.
 
+## 🚀 Current Progress (As of March 21, 2026)
+- **Multi-tenancy**: Core structure for handling multiple stores via subdomains/store IDs is implemented.
+- **Admin Dashboard**:
+    - **Authentication**: Secure login system with role-based access (Owner/Admin).
+    - **Category Management**: Full CRUD (Create, Read, Update, Delete) functionality for product categories.
+    - **Product Management**: Full CRUD functionality including stock tracking, low-stock thresholds, and price formatting.
+- **Storefront**: Basic customer-facing portal (`index.php`) with cart and checkout integration.
+- **Infrastructure**: Centralized database connection and utility functions in the `includes/` directory.
+
+## 🏗️ Next Steps
+- Implement **Order Management** in the admin dashboard.
+- Develop **Customer Management** and basic reporting/analytics.
+- Add support for **Physical Image Uploads** (currently using URL placeholders).
+- Enhance the **Saas Landing Page** (`saas_landing.php`) to handle actual tenant registrations.
+
 ## Technologies Used
 - **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript (ES6+), Chart.js
 - **Backend:** PHP 8+
