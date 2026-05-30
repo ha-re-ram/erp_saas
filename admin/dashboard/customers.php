@@ -21,8 +21,8 @@ $query = "
            COALESCE(SUM(o.total_amount), 0) as total_spend,
            COUNT(o.id) as total_orders
     FROM users u
-    LEFT JOIN orders o ON u.id = o.customer_id AND o.store_id = :store_id
-    WHERE u.store_id = :store_id AND u.role = 'customer'
+    LEFT JOIN orders o ON u.id = o.customer_id AND o.store_id = :store_id_1
+    WHERE u.store_id = :store_id_2 AND u.role = 'customer'
 ";
 
 if (!empty($search)) {
@@ -32,7 +32,10 @@ if (!empty($search)) {
 $query .= " GROUP BY u.id ORDER BY total_spend DESC";
 
 $stmt = $pdo->prepare($query);
-$params = ['store_id' => $store_id];
+$params = [
+    'store_id_1' => $store_id,
+    'store_id_2' => $store_id
+];
 if (!empty($search)) {
     $params['search'] = '%' . $search . '%';
 }
