@@ -1,11 +1,11 @@
 <?php
 // includes/config.php
 
-// Define environment// Database configuration
-define('DB_HOST', 'bfovm7vgdwvajydo3fti-mysql.services.clever-cloud.com');
-define('DB_NAME', 'bfovm7vgdwvajydo3fti');
-define('DB_USER', 'ummjclzu0fe8ya63');
-define('DB_PASS', 'CxlBtMkU87ZvmTlru5La');
+// Database configuration
+define('DB_HOST', 'sql204.infinityfree.com');
+define('DB_NAME', 'if0_42056750_YOUR_SUFFIX'); // <-- IMPORTANT: Replace YOUR_SUFFIX with what you named the database (e.g. if0_42056750_erp)
+define('DB_USER', 'if0_42056750');
+define('DB_PASS', 'G9s80HtM6jcM');
 
 // Base URL configuration (without trailing slash)
 define('BASE_URL', 'http://hareramkushwah.infinityfree.io'); // Base platform URL
