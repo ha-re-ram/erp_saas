@@ -22,13 +22,88 @@ $products = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - ERP Dashboard</title>
+    <title>Products Inventory - ERP Dashboard</title>
+    <!-- Outfit Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-        .sidebar { height: 100vh; background-color: #343a40; color: white; padding-top: 20px;}
-        .sidebar a { color: #adb5bd; text-decoration: none; padding: 10px 20px; display: block; }
-        .sidebar a:hover, .sidebar a.active { background-color: #495057; color: white; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+        .sidebar {
+            height: 100vh;
+            background: rgba(30, 41, 59, 0.4);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding-top: 30px;
+        }
+        .sidebar-title {
+            font-weight: 800;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+        }
+        .sidebar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            margin: 4px 12px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background: rgba(255, 255, 255, 0.03);
+            color: #f8fafc;
+            border-left: 3px solid #a855f7;
+        }
+        .sidebar a.active {
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0) 100%);
+        }
+        .main-panel {
+            padding: 30px 40px;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(16px);
+            padding: 25px;
+        }
+        .table-glass {
+            background: transparent !important;
+            color: #f1f5f9 !important;
+        }
+        .table-glass th {
+            background: rgba(255, 255, 255, 0.02) !important;
+            color: #94a3b8 !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            font-weight: 600;
+        }
+        .table-glass td {
+            background: transparent !important;
+            color: #cbd5e1 !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+        }
+        .badge-low {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .badge-ok {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #a7f3d0;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -37,7 +112,9 @@ $products = $stmt->fetchAll();
             <!-- Sidebar Navigation -->
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky">
-                    <h5 class="px-3 mb-4 text-white">ERP system</h5>
+                    <div class="px-4 mb-4">
+                        <span class="sidebar-title"><i class="bi bi-cpu-fill me-2"></i>ERPSAAS ERP</span>
+                    </div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="index.php"><i class="bi bi-speedometer2"></i> Dashboard</a>
@@ -62,67 +139,75 @@ $products = $stmt->fetchAll();
             </nav>
 
             <!-- Main Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Manage Products</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <a href="product_add.php" class="btn btn-sm btn-primary me-2">
+            <main class="col-md-9 ms-sm-auto col-lg-10 main-panel">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-3 mb-4 border-bottom border-secondary border-opacity-10">
+                    <div>
+                        <h1 class="h2 fw-bold mb-1">Product Inventory</h1>
+                        <p class="text-secondary mb-0">Manage items, stock counts, and store pricing.</p>
+                    </div>
+                    <div class="btn-toolbar mb-2 mb-md-0 gap-2">
+                        <a href="product_add.php" class="btn btn-primary rounded-pill px-4 btn-sm d-flex align-items-center gap-2" style="background: linear-gradient(135deg, #6366f1, #a855f7); border:none;">
                             <i class="bi bi-plus-lg"></i> Add New Product
                         </a>
-                        <a href="logout.php" class="btn btn-sm btn-outline-danger">
+                        <a href="logout.php" class="btn btn-outline-danger rounded-pill px-4 btn-sm d-flex align-items-center gap-2">
                             <i class="bi bi-box-arrow-right"></i> Logout
                         </a>
                     </div>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (count($products) > 0): ?>
-                                <?php foreach ($products as $product): ?>
+                <div class="glass-card">
+                    <div class="table-responsive">
+                        <table class="table table-glass align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock Level</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (count($products) > 0): ?>
+                                    <?php foreach ($products as $product): ?>
+                                        <tr>
+                                            <td>#<?= $product['id'] ?></td>
+                                            <td>
+                                                <?php if ($product['image_url']): ?>
+                                                    <img src="<?= htmlspecialchars($product['image_url']) ?>" alt="img" width="44" height="44" class="rounded border border-secondary border-opacity-20" style="object-fit:cover;">
+                                                <?php else: ?>
+                                                    <div class="bg-secondary text-white text-center rounded d-flex align-items-center justify-content-center border border-secondary border-opacity-20" style="width: 44px; height: 44px; font-size: 0.75rem;"><i class="bi bi-image"></i></div>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td class="fw-bold text-white"><?= htmlspecialchars($product['name']) ?></td>
+                                            <td><?= htmlspecialchars($product['category_name'] ?? 'Uncategorized') ?></td>
+                                            <td class="fw-semibold text-white"><?= formatPrice($product['price']) ?></td>
+                                            <td>
+                                                <?php if ($product['stock_quantity'] <= $product['low_stock_threshold']): ?>
+                                                    <span class="badge rounded-pill badge-low px-3 py-2"><i class="bi bi-exclamation-circle me-1"></i><?= $product['stock_quantity'] ?> (Low)</span>
+                                                <?php else: ?>
+                                                    <span class="badge rounded-pill badge-ok px-3 py-2"><i class="bi bi-check-circle me-1"></i><?= $product['stock_quantity'] ?></span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="product_edit.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-light me-1" title="Edit Product"><i class="bi bi-pencil"></i></a>
+                                                <a href="product_delete.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this product? This action cannot be undone.');" title="Delete Product"><i class="bi bi-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
                                     <tr>
-                                        <td>#<?= $product['id'] ?></td>
-                                        <td>
-                                            <?php if ($product['image_url']): ?>
-                                                <img src="<?= htmlspecialchars($product['image_url']) ?>" alt="img" width="40" height="40" class="rounded">
-                                            <?php else: ?>
-                                                <div class="bg-secondary text-white text-center rounded d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; font-size: 0.7rem;">None</div>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td class="fw-bold"><?= htmlspecialchars($product['name']) ?></td>
-                                        <td><?= htmlspecialchars($product['category_name'] ?? 'Uncategorized') ?></td>
-                                        <td><?= formatPrice($product['price']) ?></td>
-                                        <td>
-                                            <?php if ($product['stock_quantity'] <= $product['low_stock_threshold']): ?>
-                                                <span class="badge bg-danger"><?= $product['stock_quantity'] ?> (Low)</span>
-                                            <?php else: ?>
-                                                <span class="badge bg-success"><?= $product['stock_quantity'] ?></span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <a href="product_edit.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
-                                            <a href="product_delete.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this product? This acton cannot be undone.');"><i class="bi bi-trash"></i></a>
+                                        <td colspan="7" class="text-center py-5 text-secondary">
+                                            <i class="bi bi-box-seam fs-1 mb-2 d-block text-secondary" style="opacity: 0.3;"></i>
+                                            No products found in this store. Click "Add New Product" to populate your catalog!
                                         </td>
                                     </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="7" class="text-center py-4 text-muted">No products found. Start by adding one!</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
         </div>

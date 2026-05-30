@@ -53,33 +53,112 @@ if (!empty($cart)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - <?= htmlspecialchars($store['store_name']) ?></title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shopping Bag - <?= htmlspecialchars($store['store_name']) ?></title>
+    <!-- Outfit Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .navbar { background: white; padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
-        .cart-wrapper { background: white; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); overflow: hidden; }
-        .cart-header { font-weight: 700; color: #0f172a; padding: 25px; border-bottom: 1px solid #e2e8f0; margin:0;}
-        .cart-item { padding: 20px 25px; border-bottom: 1px solid #f1f5f9; display:flex; align-items:center; }
-        .cart-img { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; background: #f8fafc; }
-        .cart-details { flex-grow: 1; margin-left: 20px; }
-        .cart-title { font-weight: 600; font-size: 1.1rem; color: #1e293b; margin-bottom: 4px; }
-        .cart-price { font-weight: 700; color: #0f172a; }
-        .cart-qty { background:#f1f5f9; padding: 5px 15px; border-radius: 50px; font-weight:600; font-size:0.9rem;}
-        .summary-box { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .btn-checkout { background: #0f172a; color: white; padding: 15px; border-radius: 12px; font-weight: 600; width: 100%; display:block; text-align:center; text-decoration:none; transition:0.2s; }
-        .btn-checkout:hover { background: #334155; color: white; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+        }
+        .cart-wrapper {
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .cart-header {
+            font-weight: 700;
+            color: #f8fafc;
+            padding: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0;
+        }
+        .cart-item {
+            padding: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            align-items: center;
+        }
+        .cart-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .cart-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .cart-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #f8fafc;
+            margin-bottom: 4px;
+        }
+        .cart-price {
+            font-weight: 800;
+            color: #f8fafc;
+        }
+        .cart-qty {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .summary-box {
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .btn-checkout {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 700;
+            width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            border: none;
+        }
+        .btn-checkout:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+            color: white;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar mb-5">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.php?store=<?= urlencode($store['subdomain']) ?>" class="text-dark fw-bold text-decoration-none fs-4">
-                <i class="bi bi-arrow-left me-2"></i> Continue Shopping
+            <a href="index.php?store=<?= urlencode($store['subdomain']) ?>" class="text-white fw-bold text-decoration-none fs-5 d-flex align-items-center gap-2">
+                <i class="bi bi-arrow-left"></i> Keep Shopping
             </a>
-            <h5 class="mb-0 fw-bold"><?= htmlspecialchars($store['store_name']) ?> Checkout</h5>
+            <h5 class="mb-0 fw-bold" style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><?= htmlspecialchars($store['store_name']) ?> Checkout</h5>
         </div>
     </nav>
 
@@ -92,10 +171,11 @@ if (!empty($cart)) {
                     <h5 class="cart-header">Items (<?= count($cart_items) ?>)</h5>
                     
                     <?php if(empty($cart_items)): ?>
-                        <div class="p-5 text-center text-muted">
-                            <i class="bi bi-cart-x fs-1 mb-3"></i>
-                            <h4>Your cart is empty.</h4>
-                            <p>Looks like you haven't added anything to your cart yet.</p>
+                        <div class="p-5 text-center text-secondary">
+                            <i class="bi bi-cart-x fs-1 mb-3 text-secondary" style="opacity: 0.4;"></i>
+                            <h4 class="fw-bold text-white">Your cart is empty.</h4>
+                            <p>Discover our exclusive products and add some items to your bag.</p>
+                            <a href="index.php?store=<?= urlencode($store['subdomain']) ?>" class="btn btn-outline-light rounded-pill px-4 mt-3">Return to Store</a>
                         </div>
                     <?php else: ?>
                         <?php foreach($cart_items as $item): ?>
@@ -103,16 +183,16 @@ if (!empty($cart)) {
                                 <?php if($item['image_url']): ?>
                                     <img src="<?= htmlspecialchars($item['image_url']) ?>" class="cart-img" alt="product">
                                 <?php else: ?>
-                                    <div class="cart-img d-flex align-items-center justify-content-center text-muted fs-3"><i class="bi bi-image"></i></div>
+                                    <div class="cart-img d-flex align-items-center justify-content-center text-secondary fs-3"><i class="bi bi-image"></i></div>
                                 <?php endif; ?>
                                 
                                 <div class="cart-details">
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-start">
                                         <h5 class="cart-title"><?= htmlspecialchars($item['name']) ?></h5>
                                         <h5 class="cart-price"><?= formatPrice($item['subtotal']) ?></h5>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div class="text-secondary small">Price: <?= formatPrice($item['price']) ?></div>
+                                        <div class="text-secondary small">Unit Price: <?= formatPrice($item['price']) ?></div>
                                         <div class="d-flex align-items-center gap-3">
                                             <span class="cart-qty">Qty: <?= $item['qty'] ?></span>
                                             <a href="?store=<?= urlencode($store['subdomain']) ?>&remove=<?= $item['id'] ?>" class="text-danger small text-decoration-none fw-bold">Remove</a>
@@ -126,7 +206,7 @@ if (!empty($cart)) {
             </div>
             
             <div class="col-lg-4">
-                <div class="summary-box">
+                <div class="summary-box text-light">
                     <h4 class="fw-bold mb-4">Order Summary</h4>
                     <div class="d-flex justify-content-between mb-3 text-secondary">
                         <span>Subtotal</span>
@@ -134,18 +214,18 @@ if (!empty($cart)) {
                     </div>
                     <div class="d-flex justify-content-between mb-3 text-secondary">
                         <span>Shipping</span>
-                        <span>Calculated at checkout</span>
+                        <span class="badge bg-success bg-opacity-20 text-success">FREE</span>
                     </div>
-                    <hr class="my-4">
-                    <div class="d-flex justify-content-between mb-4 fs-4 fw-bold">
+                    <hr class="my-4 rgba-white-border" style="border-color: rgba(255,255,255,0.05);">
+                    <div class="d-flex justify-content-between mb-4 fs-4 fw-bold text-white">
                         <span>Total</span>
                         <span><?= formatPrice($total_cost) ?></span>
                     </div>
                     
                     <?php if(!empty($cart_items)): ?>
-                        <a href="checkout.php?store=<?= urlencode($store['subdomain']) ?>" class="btn-checkout">Secure Checkout <i class="bi bi-lock-fill ms-2"></i></a>
+                        <a href="checkout.php?store=<?= urlencode($store['subdomain']) ?>" class="btn-checkout">Secure Checkout <i class="bi bi-lock-fill ms-1"></i></a>
                     <?php else: ?>
-                        <button class="btn-checkout opacity-50 pe-none">Checkout Unavailable</button>
+                        <button class="btn-checkout opacity-50 pe-none" disabled>Checkout Unavailable</button>
                     <?php endif; ?>
                 </div>
             </div>

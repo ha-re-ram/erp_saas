@@ -59,8 +59,10 @@ $orders = $stmt->fetchAll();
                                 <th>Customer Name</th>
                                 <th>Email</th>
                                 <th>Amount</th>
-                                <th>Status</th>
+                                <th>Payment Status</th>
+                                <th>Order Status</th>
                                 <th>Date</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,17 +72,25 @@ $orders = $stmt->fetchAll();
                                         <td>#<?= $order['id'] ?></td>
                                         <td><?= htmlspecialchars($order['customer_name']) ?></td>
                                         <td><?= htmlspecialchars($order['customer_email']) ?></td>
-                                        <td><?= formatPrice($order['total_amount']) ?></td>
+                                        <td class="fw-bold"><?= formatPrice($order['total_amount']) ?></td>
+                                        <td>
+                                            <span class="badge bg-<?= $order['payment_status'] === 'paid' ? 'success' : ($order['payment_status'] === 'refunded' ? 'secondary' : 'danger') ?>">
+                                                <?= ucfirst($order['payment_status'] ?? 'unpaid') ?>
+                                            </span>
+                                        </td>
                                         <td>
                                             <span class="badge bg-<?= $order['status'] === 'delivered' ? 'success' : ($order['status'] === 'pending' ? 'warning' : 'primary') ?>">
                                                 <?= ucfirst($order['status']) ?>
                                             </span>
                                         </td>
                                         <td><?= date('M d, Y h:i A', strtotime($order['created_at'])) ?></td>
+                                        <td>
+                                            <a href="order_details.php?id=<?= $order['id'] ?>" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> Details</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <tr><td colspan="6" class="text-center py-4 text-muted">No orders placed yet.</td></tr>
+                                <tr><td colspan="8" class="text-center py-4 text-muted">No orders placed yet.</td></tr>
                             <?php endif; ?>
                         </tbody>
                     </table>
