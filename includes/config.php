@@ -1,14 +1,14 @@
 <?php
 // includes/config.php
 
-// Define environment parameters
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root'); // Change on production
-define('DB_PASS', '');     // Change on production
-define('DB_NAME', 'erp_saas');
+// Define environment// Database configuration
+define('DB_HOST', 'bfovm7vgdwvajydo3fti-mysql.services.clever-cloud.com');
+define('DB_NAME', 'bfovm7vgdwvajydo3fti');
+define('DB_USER', 'ummjclzu0fe8ya63');
+define('DB_PASS', 'CxlBtMkU87ZvmTlru5La');
 
-define('APP_NAME', 'SaaS ERP & E-Commerce');
-define('APP_URL', 'http://localhost/erp_saas'); // Base platform URL
+// Base URL configuration (without trailing slash)
+define('BASE_URL', 'http://hareramkushwah.infinityfree.io'); // Base platform URL
 define('MAIN_DOMAIN', 'localhost'); // e.g., 'mysite.com' for production
 
 // Setup error reporting (disable in production)

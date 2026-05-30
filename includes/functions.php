@@ -11,8 +11,8 @@ function getCurrentStore($pdo) {
     $host = $_SERVER['HTTP_HOST']; // e.g., store1.mysite.com
     $subdomain = explode('.', $host)[0];
     
-    // Fallback for local testing (e.g., localhost/erp_saas?store=electronics)
-    if ($host === 'localhost' && isset($_GET['store'])) {
+    // Fallback for local testing and platform landing pages (e.g., hareramkushwah.infinityfree.io/?store=electronics)
+    if (($host === 'localhost' || strpos($host, 'hareramkushwah') !== false) && isset($_GET['store'])) {
         $subdomain = $_GET['store'];
     }
 
