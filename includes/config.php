@@ -3,9 +3,9 @@
 
 // Database configuration
 define('DB_HOST', 'sql204.infinityfree.com');
-define('DB_NAME', 'if0_42056750_erp'); // <-- IMPORTANT: Replace YOUR_SUFFIX with what you named the database (e.g. if0_42056750_erp)
+define('DB_NAME', 'if0_42056750_XXXX'); // Replace XXXX with your database suffix
 define('DB_USER', 'if0_42056750');
-define('DB_PASS', 'G9s80HtM6jcM');
+define('DB_PASS', 'YOUR_INFINITYFREE_PASSWORD_HERE'); // Enter your direct password here (do not commit to GitHub!)
 
 // Base URL configuration (without trailing slash)
 define('BASE_URL', 'http://hareramkushwah.infinityfree.io'); // Base platform URL
