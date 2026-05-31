@@ -3,7 +3,7 @@
 
 // Database configuration
 define('DB_HOST', 'sql204.infinityfree.com');
-define('DB_NAME', 'if0_42056750_YOUR_SUFFIX'); // <-- IMPORTANT: Replace YOUR_SUFFIX with what you named the database (e.g. if0_42056750_erp)
+define('DB_NAME', 'if0_42056750_erp'); // <-- IMPORTANT: Replace YOUR_SUFFIX with what you named the database (e.g. if0_42056750_erp)
 define('DB_USER', 'if0_42056750');
 define('DB_PASS', 'G9s80HtM6jcM');
 
