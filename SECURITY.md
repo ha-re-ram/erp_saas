@@ -20,7 +20,7 @@ Only the latest active version of NexisERP receives security updates:
 If you discover a security vulnerability, please **do not open a public issue**. Instead, report it responsibly so we can investigate and deploy a fix before it is publicly disclosed.
 
 ### How to Report
-1. Email your findings directly to the project maintainer: **hareramkushwaha@example.com** *(Replace with your active email address!)*.
+1. Email your findings directly to the project maintainer: **hareramkushwaha054@gmail.com**.
 2. In your report, please include:
    * A detailed description of the vulnerability.
    * Step-by-step instructions or a proof-of-concept script to reproduce the exploit.

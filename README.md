@@ -136,6 +136,18 @@ php -S localhost:8000
 
 ---
 
+## 👨‍💻 Creator & Contact
+
+**Hareram Kushwaha**
+*   **Portfolio Website**: [hareramkushwaha.com.np](https://hareramkushwaha.com.np)
+*   **GitHub**: [@ha-re-ram](https://github.com/ha-re-ram)
+*   **LinkedIn**: [in/ha-re-ram](https://linkedin.com/in/ha-re-ram)
+*   **Email**: [hareramkushwaha054@gmail.com](mailto:hareramkushwaha054@gmail.com)
+
+Feel free to connect or reach out for collaborations!
+
+---
+
 ## 📄 License & Standards
 
 This project is open-source software licensed under the [MIT License](LICENSE). 
@@ -146,3 +158,4 @@ For vulnerability reports, please review our [Security Policy](SECURITY.md).
 
 ## 🏷️ Tags & Keywords
 `#php8` `#mysql` `#saas` `#multi-tenancy` `#erp-system` `#ecommerce-platform` `#chartjs` `#glassmorphism` `#web-development` `#software-architecture` `#clean-code` `#bootstrap5`
+
