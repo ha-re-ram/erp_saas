@@ -1,16 +1,32 @@
 # 🌌 NexisERP: Multi-Tenant E-Commerce & ERP SaaS Platform
 
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-brightgreen.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](http://hareramkushwah.infinityfree.io/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-777bb4.svg?style=for-the-badge&logo=php)](https://www.php.net/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-4479A1.svg?style=for-the-badge&logo=mysql)](https://www.mysql.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3.svg?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Cloudflare](https://img.shields.io/badge/Cloudflare-DNS%20Proxied-F38020.svg?style=for-the-badge&logo=cloudflare)](https://www.cloudflare.com/)
 
 NexisERP is a high-performance, dynamic, and state-of-the-art **Multi-Tenant E-commerce and ERP SaaS platform** designed for modern digital commerce. Powered by a dynamic PHP 8 core, MySQL, and a luxury dark glassmorphic design system using the Outfit typography, NexisERP delivers an enterprise-grade experience for storefront shoppers and merchant administrators alike.
 
 ---
 
-## 📸 Platform Showcases & Aesthetics
+## 🔗 Live Interactive Demos
+
+Explore the fully hosted live deployment in the cloud:
+
+*   **SaaS Central Landing Hub**: [http://hareramkushwah.infinityfree.io/](http://hareramkushwah.infinityfree.io/)
+*   **🛍️ Electronics Storefront**: [http://hareramkushwah.infinityfree.io/?store=electronics](http://hareramkushwah.infinityfree.io/?store=electronics)
+*   **🛍️ Clothing Boutique Storefront**: [http://hareramkushwah.infinityfree.io/?store=clothing](http://hareramkushwah.infinityfree.io/?store=clothing)
+*   **📊 Merchant ERP Back-Office**: [http://hareramkushwah.infinityfree.io/admin/index.php?store=electronics](http://hareramkushwah.infinityfree.io/admin/index.php?store=electronics)
+
+### 🔑 Sandbox Admin Credentials
+To test the back-office analytics, dynamic graphs, category editors, and invoice fullfilment:
+*   **Username**: `admin@electronics.com` (for Electronics) or `admin@clothing.com` (for Clothing)
+*   **Secure Password**: `password`
+
+---
+
+## 🎨 Platform Showcases & Architecture
 
 The platform features a **premium glassmorphic theme** characterized by semi-transparent backdrops (`backdrop-filter: blur()`), vibrant linear gradients, responsive grids, and subtle micro-animations that respond seamlessly to user interaction.
 
@@ -91,16 +107,16 @@ graph TD
 
 ---
 
-## 🛠️ Installation & Setup Instructions
+## 🛠️ Local Installation & Setup
 
 ### 1. Database Provisioning
-Create a new MySQL database instance on your local environment (e.g. phpMyAdmin, XAMPP, or MariaDB) and import the seed schema:
+Import the seed database schema into your local environment:
 ```bash
 mysql -u your_username -p your_database_name < database.sql
 ```
 
 ### 2. Environment Configuration
-Open `includes/config.php` and fill in your connection variables:
+Open `includes/config.php` and configure your database parameters:
 ```php
 // Database configuration
 define('DB_HOST', 'localhost');
@@ -112,8 +128,6 @@ define('DB_PASS', '');
 define('BASE_URL', 'http://localhost/erp_saas');
 ```
 
-> NexisERP features an **Environmental Database Loader**. It will automatically detect server-level environment variables (like those on Clever Cloud, Railway, or Render) and prioritize them over constants.
-
 ### 3. Start Local Development Server
 Execute a local PHP dev server directly from the workspace root:
 ```bash
@@ -122,36 +136,13 @@ php -S localhost:8000
 
 ---
 
-## 🧪 Testing and Sandboxing
-
-### A. Simulated Hostnames (Localhost)
-Access individual storefronts using local tenant parameters:
-*   **Electronics Storefront**: `http://localhost:8000/?store=electronics`
-*   **Boutique Storefront**: `http://localhost:8000/?store=clothing`
-
-### B. Sandbox Login Credentials
-
-| Business Domain | Admin Email Address | Secure Password | back-office Entrance |
-| :--- | :--- | :--- | :--- |
-| **Electronics Hub** | `admin@electronics.com` | `password` | `http://localhost:8000/admin/index.php?store=electronics` |
-| **Clothing Boutique** | `admin@clothing.com` | `password` | `http://localhost:8000/admin/index.php?store=clothing` |
-
----
-
-## ☁️ Cloudflare & Subdomain Hosting Setup
-
-To host NexisERP under a custom domain (e.g., `yourdomain.com.np`) for **100% free** using **InfinityFree** or any standard VPS:
-
-1. **DNS Wildcards**: In your **Cloudflare DNS Panel**, add a CNAME record pointing your wildcards (`*`) directly to your web host:
-   * **Type**: `CNAME` | **Name**: `*` | **Target**: `yourdomain.com.np` | **Proxy status**: `Proxied (Orange)`
-2. **Server Configuration**: Ensure your Nginx or Apache server block matches wildcard aliases:
-   * **Nginx**: `server_name yourdomain.com.np *.yourdomain.com.np;`
-   * **Apache**: `ServerAlias yourdomain.com.np *.yourdomain.com.np`
-
----
-
 ## 📄 License & Standards
 
 This project is open-source software licensed under the [MIT License](LICENSE). 
 Contributions must follow the guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
 For vulnerability reports, please review our [Security Policy](SECURITY.md).
+
+---
+
+## 🏷️ Tags & Keywords
+`#php8` `#mysql` `#saas` `#multi-tenancy` `#erp-system` `#ecommerce-platform` `#chartjs` `#glassmorphism` `#web-development` `#software-architecture` `#clean-code` `#bootstrap5`
