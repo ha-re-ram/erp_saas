@@ -139,9 +139,9 @@ php -S localhost:8000
 ## 👨‍💻 Creator & Contact
 
 **Hareram Kushwaha**
-*   **Portfolio Website**: [hareramkushwaha.com.np](https://hareramkushwaha.com.np)
-*   **GitHub**: [@ha-re-ram](https://github.com/ha-re-ram)
-*   **LinkedIn**: [in/ha-re-ram](https://linkedin.com/in/ha-re-ram)
+*   **Portfolio Website**: [hareramkushwaha](https://hareramkushwaha.com.np)
+*   **GitHub**: [ha-re-ram](https://github.com/ha-re-ram)
+*   **LinkedIn**: [ha-re-ram](https://linkedin.com/in/ha-re-ram)
 *   **Email**: [hareramkushwaha054@gmail.com](mailto:hareramkushwaha054@gmail.com)
 
 Feel free to connect or reach out for collaborations!

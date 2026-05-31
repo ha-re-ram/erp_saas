@@ -154,10 +154,25 @@
         </div>
     </section>
 
-    <footer class="text-center py-4" style="border-top: 1px solid #1e293b; color: #64748b;">
+    <footer class="text-center py-5 mt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.05); color: #94a3b8; background: rgba(30, 41, 59, 0.2);">
         <div class="container">
-            <p class="mb-0">&copy; <?= date('Y') ?> ERPSAAS. All rights reserved.</p>
+            <p class="mb-2 fw-semibold text-white">NexisERP SaaS Engine</p>
+            <p class="mb-3 small text-secondary">A highly scalable Multi-Tenant ERP & E-Commerce Platform.</p>
+            <div class="d-flex justify-content-center gap-4 mb-4 small">
+                <a href="https://hareramkushwaha.com.np" target="_blank" class="text-decoration-none text-secondary hover-white"><i class="bi bi-globe2 me-1"></i> Portfolio</a>
+                <a href="https://github.com/ha-re-ram" target="_blank" class="text-decoration-none text-secondary hover-white"><i class="bi bi-github me-1"></i> GitHub</a>
+                <a href="https://linkedin.com/in/ha-re-ram" target="_blank" class="text-decoration-none text-secondary hover-white"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                <a href="mailto:hareramkushwaha054@gmail.com" class="text-decoration-none text-secondary hover-white"><i class="bi bi-envelope-fill me-1"></i> Email</a>
+            </div>
+            <p class="mb-0 small text-secondary">&copy; <?= date('Y') ?> NexisERP. Proudly Developed by <a href="https://hareramkushwaha.com.np" target="_blank" class="text-white fw-bold text-decoration-none" style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Hareram Kushwaha</a>.</p>
         </div>
     </footer>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .hover-white:hover {
+            color: #ffffff !important;
+            transition: color 0.2s ease;
+        }
+    </style>
 </body>
 </html>

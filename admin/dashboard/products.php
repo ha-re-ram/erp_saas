@@ -135,6 +135,11 @@ $products = $stmt->fetchAll();
                             <a class="nav-link" href="reports.php"><i class="bi bi-bar-chart"></i> Reports</a>
                         </li>
                     </ul>
+                    
+                    <div class="px-4 mt-5 pt-5 text-center" style="position: absolute; bottom: 20px; width: 100%; left: 0;">
+                        <span class="small text-secondary" style="font-size: 0.7rem; opacity: 0.6;">Developed by</span>
+                        <a href="https://hareramkushwaha.com.np" target="_blank" class="d-block small text-decoration-none fw-bold mt-1" style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 0.78rem;">Hareram Kushwaha</a>
+                    </div>
                 </div>
             </nav>
 

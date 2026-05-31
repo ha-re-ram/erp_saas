@@ -153,5 +153,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn-premium">Sign In to Dashboard</button>
         </form>
     </div>
+    
+    <!-- Subtle Author Copyright Signature -->
+    <div style="position: absolute; bottom: 20px; font-size: 0.8rem; color: #64748b; text-align: center; width: 100%;">
+        Developed by <a href="https://hareramkushwaha.com.np" target="_blank" style="color: #a855f7; text-decoration: none; font-weight: 600; transition: color 0.2s ease;">Hareram Kushwaha</a>
+    </div>
 </body>
 </html>
